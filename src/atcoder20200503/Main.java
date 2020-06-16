@@ -2,7 +2,7 @@ package atcoder20200503;
 
 import paiza.FastScanner;
 
-public class PaizaA017 {
+public class Main {
 	public static void main(String[] args) {
 		FastScanner sc = new FastScanner();
 
@@ -65,4 +65,3 @@ public class PaizaA017 {
 		}
 	}
 }
-

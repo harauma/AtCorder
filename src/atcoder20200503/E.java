@@ -1,7 +1,5 @@
 package atcoder20200503;
 
-import paiza.FastScanner;
-
 public class E {
 	public static void main(String[] args) {
 		FastScanner sc = new FastScanner();

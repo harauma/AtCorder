@@ -4,8 +4,6 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 
-import paiza.FastScanner;
-
 
 public class C {
 	public static void main(String[] args) {

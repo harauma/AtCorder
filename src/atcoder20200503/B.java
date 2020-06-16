@@ -3,8 +3,6 @@ package atcoder20200503;
 import java.util.ArrayList;
 import java.util.List;
 
-import paiza.FastScanner;
-
 public class B {
 	public static void main(String[] args) {
 		FastScanner sc = new FastScanner();
