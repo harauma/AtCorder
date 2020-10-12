@@ -1,0 +1,75 @@
+package atcorder20201010;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.NoSuchElementException;
+
+public class Main {
+	public static void main(String[] args) {
+		FastScanner sc = new FastScanner();
+
+		String S;
+		int count = 0;
+		int H = Integer.parseInt(sc.next());
+		int W = Integer.parseInt(sc.next());
+		String hoge [][] = new String[H][W];
+
+		for (int i = 0; i < H; i ++) {
+			S = sc.next();
+			hoge[i] = S.split("");
+		}
+
+		for (int i = 0; i < H; i++) {
+			for (int j = 0; j < W; j++) {
+				if (j + 1 != W) {
+					if (hoge[i][j] == "." && hoge[i][j + 1] == ".") {
+						count++;
+					}
+				}
+				if (i + 1 != H) {
+					if (hoge[i][j] == "." && hoge[i + 1][j + 1] == ".") {
+						count++;
+					}
+				}
+			}
+		}
+		System.out.print(count);
+	}
+
+}
+
+class FastScanner {
+	private final InputStream in = System.in;
+	private final byte[] buffer = new byte[1024];
+	private int ptr = 0;
+	private int buflen = 0;
+	private boolean hasNextByte() {
+		if (ptr < buflen) {
+			return true;
+		}else{
+			ptr = 0;
+			try {
+				buflen = in.read(buffer);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			if (buflen <= 0) {
+				return false;
+			}
+		}
+		return true;
+	}
+	private int readByte() { if (hasNextByte()) return buffer[ptr++]; else return -1;}
+	private static boolean isPrintableChar(int c) { return 33 <= c && c <= 126;}
+	public boolean hasNext() { while(hasNextByte() && !isPrintableChar(buffer[ptr])) ptr++; return hasNextByte();}
+	public String next() {
+		if (!hasNext()) throw new NoSuchElementException();
+		StringBuilder sb = new StringBuilder();
+		int b = readByte();
+		while(isPrintableChar(b)) {
+			sb.appendCodePoint(b);
+			b = readByte();
+		}
+		return sb.toString();
+	}
+}
